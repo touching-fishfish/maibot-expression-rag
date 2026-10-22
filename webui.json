@@ -1,0 +1,51 @@
+{
+  "schema_version": 2,
+  "required_capabilities": ["custom_pages"],
+  "workspace_title": "表达检索",
+  "pages": [
+    {
+      "id": "expressions",
+      "title": "表达检索",
+      "description": "选择模型后建立独立表达索引，预览相近表达，并追加新的精选语料。",
+      "placement": "workspace",
+      "icon": "database",
+      "mode": "custom",
+      "entry": "webui/index.html",
+      "layout": "document",
+      "queries": {
+        "status": {"api": "webui_status", "version": "1"},
+        "entries": {
+          "api": "webui_entries",
+          "version": "1",
+          "parameters": {
+            "search": {"type": "string", "max_length": 200},
+            "offset": {"type": "integer", "minimum": 0}
+          }
+        }
+      },
+      "actions": {
+        "build": {
+          "api": "webui_build",
+          "version": "1",
+          "confirmation": "确认使用你配置的 embedding 模型为缺失条目建立索引？服务商可能计费；已有语料与向量保留。"
+        },
+        "preview": {
+          "api": "webui_preview",
+          "version": "1",
+          "parameters": {
+            "query": {"type": "string", "required": true, "max_length": 2000}
+          }
+        },
+        "models": {"api": "webui_models", "version": "1"},
+        "import": {
+          "api": "webui_import",
+          "version": "1",
+          "parameters": {
+            "entries_json": {"type": "string", "required": true, "max_length": 48000}
+          },
+          "confirmation": "确认追加这批精选表达？相同条目会跳过，旧语料保留；本次导入不会调用 embedding。"
+        }
+      }
+    }
+  ]
+}

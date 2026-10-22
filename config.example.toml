@@ -1,0 +1,29 @@
+# 实际 config.toml 由 MaiBot 首次加载时生成；新机器自行选择模型。
+[plugin]
+enabled = true
+config_version = "1.0.0"
+
+[embedding]
+backend = "openai"
+base_url = ""
+model = ""
+api_key = ""
+dimensions = 0
+host_task = "embedding"
+revision = "1"
+timeout_seconds = 20.0
+batch_size = 8
+
+[retrieval]
+enabled = true
+top_k = 3
+fetch_k = 12
+min_similarity = 0.25
+mmr_lambda = 0.75
+context_messages = 4
+query_max_chars = 1200
+prompt_max_chars = 2400
+reply_timeout_seconds = 5.0
+
+[qq_faces]
+enabled = true

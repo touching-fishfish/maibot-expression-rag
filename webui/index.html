@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>表达检索</title>
+  <style>
+    :root{color-scheme:light;--page:#f6f7f9;--card:#fff;--soft:#f2f4f7;--ink:#17202d;--muted:#657184;--line:#e2e7ee;--accent:#3468a7;--accent-soft:#edf3fb;--good:#197050;--bad:#b23c3c;--bad-soft:#fff1f0;--shadow:0 3px 14px #20365005}
+    :root[data-theme="dark"]{color-scheme:dark;--page:#14191f;--card:#1b222b;--soft:#242d38;--ink:#e6edf6;--muted:#a4b1c3;--line:#344150;--accent:#9ac3fb;--accent-soft:#233953;--good:#83d3ad;--bad:#ffadab;--bad-soft:#39272b;--shadow:none}
+    *{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--ink);font:14px/1.65,system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.65;font-size:14px}button,input,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.45}button,input,textarea{border-radius:9px}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}button{min-height:39px;padding:8px 15px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-weight:550}button:hover:not(:disabled){background:var(--soft)}button.primary{background:var(--accent);border-color:var(--accent);color:#fff}html[data-theme="dark"] button.primary{color:#142033}button.primary:hover:not(:disabled){filter:brightness(.94);background:var(--accent)}button.quiet{background:transparent}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,p{margin:0}h1{font-size:27px;line-height:1.3;font-weight:650;letter-spacing:-.6px}h2{font-size:17px;line-height:1.5;font-weight:650}h3{font-size:14px;font-weight:650}small,.muted{color:var(--muted)}small{font-size:12px}main{max-width:1120px;margin:0 auto;padding:29px 26px 36px}header{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:20px}.eyebrow{font-size:11px;letter-spacing:1.3px;font-weight:650;color:var(--muted);margin-bottom:7px}.intro{margin-top:9px;max-width:740px;color:var(--muted)}.toolbar,.buttons,.section-heading,.row{display:flex;align-items:center;gap:10px}.toolbar{flex-wrap:wrap;justify-content:flex-end}.badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);padding:4px 9px;border-radius:30px;font-size:12px;white-space:nowrap;color:var(--muted)}.badge.good{color:var(--good)}.badge.bad{color:var(--bad)}.dot{width:6px;height:6px;border-radius:50%;background:currentColor}.scope{padding:12px 15px;background:var(--accent-soft);border:1px solid var(--line);border-radius:11px;margin-bottom:19px;font-size:13px}.scope strong{font-weight:650}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}.stat{border:1px solid var(--line);border-radius:12px;padding:17px 20px;background:var(--card);box-shadow:var(--shadow)}.stat label{font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:29px;line-height:1.6;font-weight:650;font-variant-numeric:tabular-nums}.stat small{display:block}.two-column{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}.card{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:21px;margin-bottom:18px;box-shadow:var(--shadow)}.section-heading{justify-content:space-between;margin-bottom:13px}.step{color:var(--muted);font-size:11px;font-weight:650;letter-spacing:.8px}.description{color:var(--muted);font-size:13px;margin:5px 0 15px}.key-values{display:grid;grid-template-columns:84px minmax(0,1fr);gap:8px 12px;margin:16px 0}.key-values dt{color:var(--muted);font-size:12px}.key-values dd{margin:0;overflow-wrap:anywhere;font-size:13px}code,.code{font-family:Consolas,"Cascadia Code",monospace;font-size:12px;overflow-wrap:anywhere}.buttons{flex-wrap:wrap;margin-top:14px}.guide{margin-top:15px;padding-top:13px;border-top:1px solid var(--line)}summary{cursor:pointer;color:var(--accent);font-size:13px}details p{margin-top:9px;color:var(--muted);font-size:13px}.model-list{margin-top:12px;max-height:170px;overflow:auto;border:1px solid var(--line);border-radius:9px}.model-item{padding:7px 10px;display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid var(--line)}.model-item:last-child{border-bottom:0}.model-item code{overflow-wrap:anywhere}.model-item button{font-size:11px;min-height:28px;padding:3px 8px;white-space:nowrap}.error{color:var(--bad);background:var(--bad-soft);border:1px solid var(--line);border-radius:9px;padding:11px 13px;margin:12px 0;font-size:13px;overflow-wrap:anywhere;white-space:pre-wrap}.notice{border:1px solid var(--line);border-radius:9px;padding:10px 13px;margin-bottom:17px;font-size:13px;overflow-wrap:anywhere}.notice[data-level="bad"]{color:var(--bad);background:var(--bad-soft)}.notice[data-level="good"]{color:var(--good)}.progress-top{display:flex;justify-content:space-between;align-items:center;margin:16px 0 7px;gap:8px}.progress-top span{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}progress{display:block;appearance:none;width:100%;height:7px;border:0;border-radius:10px;overflow:hidden;background:var(--soft);accent-color:var(--accent)}progress::-webkit-progress-bar{background:var(--soft);border-radius:10px}progress::-webkit-progress-value{background:var(--accent);border-radius:10px}progress::-moz-progress-bar{background:var(--accent);border-radius:10px}.status-note{margin-top:9px;min-height:22px;color:var(--muted);font-size:12px}.field-label{display:block;margin-bottom:7px;font-size:13px;font-weight:550}input[type="text"],input[type="search"],textarea{display:block;width:100%;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:10px 12px;min-width:0}textarea{resize:vertical;min-height:104px;line-height:1.65}textarea::placeholder,input::placeholder{color:var(--muted)}.hint{font-size:12px;color:var(--muted);margin-top:7px}.example-list{display:grid;gap:10px;margin-top:13px}.example{border:1px solid var(--line);border-radius:10px;padding:13px 14px;min-width:0}.example-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline}.example h3{overflow-wrap:anywhere}.score{font-size:11px;color:var(--accent);white-space:nowrap;font-variant-numeric:tabular-nums}.technique{margin-top:5px;font-size:13px;color:var(--muted);overflow-wrap:anywhere}.sentences{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}.sentence{background:var(--soft);border-radius:6px;padding:4px 8px;font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%}.source{display:block;margin-top:9px;color:var(--muted);font-size:11px}.empty{padding:19px 13px;border:1px dashed var(--line);border-radius:9px;color:var(--muted);font-size:13px}.prompt{max-height:280px;overflow:auto;padding:14px;background:var(--soft);border:1px solid var(--line);border-radius:9px;font-size:12px;line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere;margin:11px 0 0}.search-form{display:flex;gap:8px;margin:14px 0}.search-form input{flex:1}.library-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.library-grid .example{margin:0}.pagination{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:17px}.pagination p{font-size:12px;color:var(--muted)}.pagination .buttons{margin:0}.import-area{margin-top:12px}.file-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:13px 0}.file-row input{font-size:12px;max-width:100%}.schema-example{font-size:11px;margin:10px 0 0;white-space:pre-wrap;overflow-wrap:anywhere;padding:12px;background:var(--soft);border-radius:8px}.footer{font-size:11px;color:var(--muted);text-align:center;padding:8px 0 0}[hidden]{display:none!important}
+    @media(max-width:760px){main{padding:21px 15px 28px}header{flex-direction:column;gap:14px}.toolbar{justify-content:flex-start}.two-column,.library-grid{grid-template-columns:1fr}.card{padding:17px}.stats{gap:9px}.stat{padding:13px 11px}.stat strong{font-size:25px}.stat small{font-size:10px}.section-heading{align-items:flex-start;gap:12px}.search-form{flex-wrap:wrap}.search-form input{flex-basis:100%}.pagination{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:no-preference){button{transition:background .15s,opacity .15s}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div><p class="eyebrow">大肥鱼 · EXPRESSION RETRIEVAL</p><h1>找到贴合此刻的表达</h1><p class="intro">把相近场景中的回应方式交给 AI 参考。学习说话的分寸和语气，回复仍然围绕当前聊天。</p></div>
+    <div class="toolbar"><span class="badge" id="connectionBadge"><span class="dot"></span><span id="connectionText">正在连接页面</span></span><button id="refreshButton" type="button" disabled>刷新状态</button></div>
+  </header>
+  <div class="scope"><strong>独立的精选表达库</strong> · 仅使用你明确导入的表达。<br>公开版从空库开始，可在下方导入 JSON；不读取或启用长期记忆。</div>
+  <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+  <section class="stats" aria-label="表达库统计">
+    <div class="stat"><label>精选表达</label><strong id="totalCount">—</strong><small>可通过 JSON 继续追加</small></div>
+    <div class="stat"><label>已有向量</label><strong id="indexedCount">—</strong><small>属于当前模型的索引</small></div>
+    <div class="stat"><label>尚需建立</label><strong id="missingCount">—</strong><small>新增条目需要更新索引</small></div>
+  </section>
+  <div class="two-column">
+    <section class="card" aria-labelledby="modelTitle">
+      <div class="section-heading"><div><p class="step">01 / 模型设置</p><h2 id="modelTitle">由你选择 embedding 模型</h2></div><span class="badge" id="readyBadge">等待配置</span></div>
+      <p class="description">先在原生插件配置里填写服务地址、密钥与模型。这里不预选供应商，也不自动探测或建立索引。</p>
+      <dl class="key-values"><dt>接入方式</dt><dd id="backendValue">—</dd><dt>选择的模型</dt><dd class="code" id="selectedModel">未选择</dd><dt>索引实际模型</dt><dd class="code" id="actualModel">尚无索引</dd><dt>向量维度</dt><dd id="dimensionValue">—</dd><dt>聊天时检索</dt><dd id="retrievalValue">—</dd></dl>
+      <div class="error" id="configurationError" role="alert" hidden></div>
+      <div class="buttons"><button id="modelsButton" type="button" disabled>读取可用模型列表</button><button id="configHelpButton" class="quiet" type="button">配置入口说明</button></div>
+      <div id="modelsArea" hidden><p class="hint" id="modelsHint"></p><div id="modelList" class="model-list"></div></div>
+      <details class="guide" id="configHelp"><summary>如何选择模型与调整检索</summary><p>进入 MaiBot「插件管理 → 表达检索 → 配置」，展开「Embedding 模型」。模型选择和密钥都在原生配置页保存。</p><p><strong>独立兼容 API：</strong>接入方式选 openai（协议名称，不限 OpenAI 公司），自行填写提供兼容 /embeddings 接口的服务地址、API 密钥和具体 embedding 模型标识。地址应保留服务商要求的版本路径。</p><p><strong>复用主程序：</strong>接入方式选 host；在主程序「模型配置」的 embedding 任务中只选择一个 embedding 模型。这里读取到的是任务列表，不是具体模型列表。</p><p>保存配置后回到本页刷新，再建立索引。更换模型、维度或服务商后需使用相应的新索引；如显示模型空间变化，请先修改配置中的「索引版本」。返回条数、相似度阈值等在「表达检索」配置节调整。</p></details>
+    </section>
+    <section class="card" aria-labelledby="indexTitle">
+      <div class="section-heading"><div><p class="step">02 / 向量索引</p><h2 id="indexTitle">为表达建立语义坐标</h2></div><span class="badge" id="jobBadge">尚未建立</span></div>
+      <p class="description">将“聊天场景＋表达方式”编码为向量，例句随命中结果返回。仅为当前模型补齐缺失条目，保留已有数据。</p>
+      <div class="progress-top"><span id="progressLabel">等待建立索引</span><span id="progressCount">0 / 0</span></div><progress id="indexProgress" value="0" max="100" aria-label="索引建立进度"></progress>
+      <p class="status-note" id="jobMessage">选择模型后，点击下方按钮开始。</p><div class="error" id="jobError" role="alert" hidden></div>
+      <div class="buttons"><button class="primary" id="buildButton" type="button" disabled>建立 / 更新索引</button></div>
+      <p class="hint">会把表达的场景与方式发送给你选择的服务商，可能产生费用。点击后需要确认；页面不会重试付费操作。</p>
+      <details class="guide"><summary>索引就绪后，聊天时怎样使用？</summary><p>AI 决定回复后，插件用当前会话的目标消息和少量近期聊天检索表达，再把几条相近示例加入本轮回复要求。模型只参考表达方法，不应把例句当成自己的经历。</p><p>未建立索引、没有达到阈值的命中，或检索超时，会继续正常聊天，不随机凑语料冒充语义命中。</p></details>
+    </section>
+  </div>
+  <section class="card" aria-labelledby="previewTitle">
+    <div class="section-heading"><div><p class="step">03 / 检索预览</p><h2 id="previewTitle">试一段当前聊天</h2></div><span class="badge" id="previewBadge">尚未预览</span></div>
+    <p class="description">查看哪些表达会被选中，以及实际交给回复模型的参考文本。预览只调用 embedding，不生成回复，也不向 QQ 发消息。</p>
+    <form id="previewForm"><label class="field-label" for="queryInput">聊天内容</label><textarea id="queryInput" maxlength="2000" rows="3" placeholder="例如：今天考试没发挥好，有点难过，也不知道该怎么调整。"></textarea><div class="buttons"><button class="primary" id="previewButton" type="submit" disabled>检索相近表达</button><span class="hint">每次预览可能产生 embedding 费用；不自动重复请求。</span></div></form>
+    <div class="error" id="previewError" role="alert" hidden></div><div id="previewResults" class="example-list"><p class="empty">先完成模型配置与索引，再输入一段聊天内容。</p></div>
+    <details class="guide" id="promptDetails" hidden><summary>查看本轮注入文本</summary><pre class="prompt" id="promptText"></pre></details>
+    <details class="guide"><summary>最近一次聊天检索</summary><p id="lastRetrievalLabel" class="hint">尚无聊天检索记录。</p><div id="lastRetrievalResults" class="example-list"></div><p class="hint">相似度为向量余弦值，不是正确率。示例不贴题时，可调整阈值、条数，或补充更合适的表达。</p></details>
+  </section>
+  <section class="card" aria-labelledby="libraryTitle">
+    <div class="section-heading"><div><p class="step">精选语料</p><h2 id="libraryTitle">场景、方式与例句</h2></div><small id="libraryCount">正在加载</small></div>
+    <p class="description">这里浏览的是独立表达库。检索场景和回应方法，保留原有例句作为说话方式的参考。</p>
+    <form id="searchForm" class="search-form"><label class="sr-only" for="searchInput" hidden>搜索精选表达</label><input type="search" id="searchInput" maxlength="200" placeholder="搜索场景、表达方式或例句" aria-label="搜索精选表达"><button id="searchButton" type="submit" disabled>搜索</button><button id="resetSearchButton" class="quiet" type="button" disabled>显示全部</button></form>
+    <div id="libraryResults" class="library-grid"><p class="empty">正在读取精选表达。</p></div><div class="pagination"><p id="pageLabel">—</p><div class="buttons"><button id="previousButton" type="button" disabled>上一页</button><button id="nextButton" type="button" disabled>下一页</button></div></div>
+  </section>
+  <section class="card" aria-labelledby="importTitle">
+    <div class="section-heading"><div><p class="step">继续积累</p><h2 id="importTitle">追加新的精选表达</h2></div><small>只追加，不删除旧语料</small></div>
+    <p class="description">选择 JSON 文件或粘贴已整理好的表达。请导入精选内容，不要把原始聊天记录或私人经历直接放进来。</p>
+    <details id="importDetails"><summary>展开 JSON 导入</summary><div class="import-area"><div class="file-row"><label for="importFile">选择 JSON 文件</label><input id="importFile" type="file" accept=".json,application/json"></div><label class="field-label" for="importInput">JSON 数组</label><textarea id="importInput" spellcheck="false" rows="6" placeholder='[{"situation":"对方分享好消息","style":"轻轻肯定，不夸张吹捧","content_list":["不错啊","有实力"]}]'></textarea><p class="hint" id="importSize">每批 1–200 条，UTF-8 不超过 48,000 字节。相同条目会跳过；导入不调用 embedding。</p><div class="buttons"><button id="importButton" type="button" disabled>检查并追加表达</button></div><div class="error" id="importError" role="alert" hidden></div><p class="hint">追加成功后，再点击「建立 / 更新索引」编码新增条目。</p><details class="guide"><summary>查看 JSON 格式</summary><pre class="schema-example">[
+  {
+    "situation": "对方分享好消息",
+    "style": "轻轻肯定一句，不夸张吹捧",
+    "content_list": ["不错啊", "有实力"]
+  }
+]</pre></details></div></details>
+  </section>
+  <p class="footer" id="refreshFootnote">页面仅通过 MaiBot 官方桥连接插件 · 不加载外部资源</p>
+</main>
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const state = {connected:false, status:null, search:'', offset:0, total:0, pageSize:12, actionBusy:false, entriesBusy:false, statusBusy:false, timer:null, queue:Promise.resolve(), lastPreview:'', lastChat:'', models:[], statusHealthy:true};
+  const busyStates = new Set(['queued','running']);
+  const names = {idle:'尚未开始', queued:'等待执行', running:'进行中', completed:'已完成', failed:'未完成', cancelled:'已停止', waiting:'等待建立索引', matched:'已命中', no_match:'没有匹配', no_context:'没有聊天文本'};
+  function text(id, value) { $(id).textContent = value == null ? '' : String(value); }
+  function notice(message, level='') { const node=$('notice'); node.textContent=message; node.dataset.level=level; node.hidden=!message; }
+  function errorBox(id, message) { text(id,message); $(id).hidden=!message; }
+  function badge(id, label, type='') { const node=$(id); node.textContent=label; node.className='badge'+(type?' '+type:''); }
+  function niceState(value) { return names[value] || (value ? String(value) : '尚未开始'); }
+  function count(value) { return Number.isFinite(Number(value)) ? Math.max(0,Number(value)) : 0; }
+  function working() { return state.status && (busyStates.has(state.status.job?.state)||busyStates.has(state.status.preview?.state)); }
+  function theme() { const mode=window.maibot?.context?.theme; document.documentElement.dataset.theme=mode==='dark'?'dark':mode==='light'?'light':window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'; }
+  function serial(kind, alias, args={}) { const task=state.queue.then(() => window.maibot[kind](alias,args)); state.queue=task.catch(() => undefined); return task; }
+  function pausePoll() { if(state.timer!==null){clearTimeout(state.timer);state.timer=null;} }
+  function planPoll() { pausePoll(); if(!document.hidden&&state.connected&&state.statusHealthy&&!state.actionBusy&&working()) state.timer=setTimeout(() => {state.timer=null;refreshStatus();},3000); }
+  function controls() {
+    const enabled=state.connected&&!state.actionBusy;
+    const jobBusy=busyStates.has(state.status?.job?.state);
+    const previewBusy=busyStates.has(state.status?.preview?.state);
+    const configurationOK=state.status&&!state.status.configuration_error&&!state.status.invalid;
+    $('refreshButton').disabled=!state.connected||state.actionBusy||state.statusBusy;
+    $('modelsButton').disabled=!enabled;
+    $('buildButton').disabled=!enabled||!configurationOK||jobBusy;
+    $('previewButton').disabled=!enabled||!state.status?.ready||previewBusy||jobBusy;
+    $('importButton').disabled=!enabled||jobBusy;
+    for(const id of ['searchButton','resetSearchButton']) $(id).disabled=!enabled||state.entriesBusy;
+    $('previousButton').disabled=!enabled||state.entriesBusy||state.offset<=0;
+    $('nextButton').disabled=!enabled||state.entriesBusy||state.offset+state.pageSize>=state.total;
+    $('buildButton').textContent=jobBusy?'索引建立中…':'建立 / 更新索引';
+    $('previewButton').textContent=previewBusy?'正在检索…':'检索相近表达';
+  }
+  function exampleNode(entry, includeScore) {
+    const article=document.createElement('article'); article.className='example';
+    const top=document.createElement('div');top.className='example-top';
+    const heading=document.createElement('h3');heading.textContent=String(entry.situation||'未命名场景');top.append(heading);
+    if(includeScore&&typeof entry.score==='number'&&Number.isFinite(entry.score)){const score=document.createElement('span');score.className='score';score.textContent='相似度 '+entry.score.toFixed(3);top.append(score);}
+    const style=document.createElement('p');style.className='technique';style.textContent=String(entry.style||'');
+    const examples=document.createElement('div');examples.className='sentences';
+    if(Array.isArray(entry.content_list)) for(const value of entry.content_list){if(typeof value!=='string')continue;const span=document.createElement('span');span.className='sentence';span.textContent=value;examples.append(span);}
+    article.append(top,style,examples);
+    if(entry.source){const source=document.createElement('small');source.className='source';source.textContent='来源：'+String(entry.source);article.append(source);}
+    if(entry.display_truncated){const note=document.createElement('small');note.className='source';note.textContent='较长表达在此仅展示摘要，数据库保留完整原文。';article.append(note);}
+    return article;
+  }
+  function showExamples(containerId, entries, emptyMessage, includeScore=true) {
+    const container=$(containerId);container.replaceChildren();
+    if(!Array.isArray(entries)||!entries.length){const empty=document.createElement('p');empty.className='empty';empty.textContent=emptyMessage;container.append(empty);return;}
+    for(const entry of entries){if(entry&&typeof entry==='object')container.append(exampleNode(entry,includeScore));}
+  }
+  function renderStatus(data) {
+    state.status=data;
+    text('totalCount',count(data.total));text('indexedCount',count(data.indexed));text('missingCount',count(data.missing));
+    text('backendValue',data.backend==='host'?'复用主程序 embedding 任务':'独立 OpenAI 兼容 API');
+    text('selectedModel',data.selected_model||'未选择');text('actualModel',data.model_name||'尚无索引');text('dimensionValue',data.dimension?String(data.dimension)+' 维':'尚未确定');
+    text('retrievalValue',data.retrieval_enabled?'已开启；索引就绪后生效':'已暂停注入，可在插件配置中开启');
+    const readyText=data.invalid?'模型空间变化':data.configuration_error?'等待配置':!data.retrieval_enabled?'已暂停注入':data.ready?(data.missing?'可用 · 有新增待索引':'索引就绪'):'等待建立索引';
+    badge('readyBadge',readyText,data.invalid?'bad':data.ready?'good':'');
+    errorBox('configurationError',data.configuration_error||(data.invalid?'当前模型空间与旧索引不同。请在原生插件配置中修改「索引版本」，再建立新索引。':''));
+    const job=data.job||{};const total=count(job.total);const processed=Math.min(total,count(job.processed));const running=busyStates.has(job.state);
+    badge('jobBadge',job.state==='idle'&&data.ready?'索引就绪':niceState(job.state),job.state==='failed'?'bad':job.state==='completed'?'good':'');
+    text('progressLabel',running?'正在建立当前模型的索引':data.ready?'当前模型索引可用':'索引建立进度');text('progressCount',processed+' / '+total);
+    $('indexProgress').value=total?Math.round(processed/total*100):data.ready?100:0;
+    text('jobMessage',job.state==='completed'?'本次索引任务完成。新增表达后可继续更新。':running?'可继续浏览本页，任务进度每 3 秒更新。':job.state==='cancelled'?'任务已停止，已完成的向量保留。':data.ready?'聊天检索已具备索引，可用下方预览检查表达是否贴题。':'选择模型后，点击「建立 / 更新索引」开始。');
+    errorBox('jobError',job.error||'');
+    const preview=data.preview||{};badge('previewBadge',preview.state==='idle'?'尚未预览':niceState(preview.state),preview.state==='failed'?'bad':preview.state==='completed'?'good':'');
+    errorBox('previewError',preview.error||'');
+    const previewKey=JSON.stringify(preview);
+    if(previewKey!==state.lastPreview){
+      state.lastPreview=previewKey;
+      const empty=busyStates.has(preview.state)?'正在检索，请稍候。':preview.state==='completed'?'当前相似度阈值下没有匹配表达，不会随机补齐。':preview.state==='failed'?'预览未完成，请查看上方错误。':'先建立索引，再输入聊天内容进行检索。';
+      showExamples('previewResults',preview.items,empty);text('promptText',preview.prompt||'');$('promptDetails').hidden=!preview.prompt;
+    }
+    const last=data.last_retrieval||{};const lastKey=JSON.stringify(last);
+    if(lastKey!==state.lastChat){state.lastChat=lastKey;text('lastRetrievalLabel',last.error||(!last.state||last.state==='idle'?'尚无聊天检索记录。':'本次状态：'+niceState(last.state)));showExamples('lastRetrievalResults',last.items,last.state==='no_match'?'没有达到阈值的表达。':'暂无命中的表达。');}
+    text('connectionText','已连接');$('connectionBadge').className='badge good';text('refreshFootnote',running||busyStates.has(preview.state)?'任务进行中，每 3 秒更新状态 · 页面隐藏时暂停轮询':'状态已更新 · 空闲时不自动请求，点击右上角可刷新');
+    controls();
+  }
+  async function refreshStatus() {
+    if(!state.connected||state.statusBusy||document.hidden)return;
+    pausePoll();state.statusBusy=true;controls();
+    try{const result=await serial('query','status');if(!result||typeof result!=='object')throw new Error('插件没有返回有效状态');state.statusHealthy=true;renderStatus(result);}
+    catch(error){state.statusHealthy=false;text('connectionText','状态读取失败');$('connectionBadge').className='badge bad';notice('无法读取状态：'+String(error?.message||error)+'。本页已暂停轮询，请手动刷新。','bad');}
+    finally{state.statusBusy=false;controls();planPoll();}
+  }
+  async function loadEntries() {
+    if(!state.connected||state.entriesBusy)return;
+    state.entriesBusy=true;controls();
+    try{const data=await serial('query','entries',{search:state.search,offset:state.offset});state.total=count(data.total);state.offset=count(data.offset);state.pageSize=count(data.page_size)||12;
+      if(state.offset>=state.total&&state.offset>0){state.offset=0;state.entriesBusy=false;await loadEntries();return;}
+      showExamples('libraryResults',data.items,state.search?'没有找到符合搜索词的表达。':'当前表达库为空。',false);text('libraryCount',state.search?'找到 '+state.total+' 条':'共 '+state.total+' 条');
+      const start=state.total?state.offset+1:0;const end=Math.min(state.offset+state.pageSize,state.total);text('pageLabel',start+'–'+end+' / '+state.total+' 条');
+    }catch(error){notice('表达列表读取失败：'+String(error?.message||error),'bad');}
+    finally{state.entriesBusy=false;controls();}
+  }
+  async function act(alias,args={}) {
+    if(state.actionBusy||!state.connected)return null;
+    pausePoll();state.actionBusy=true;controls();notice('');
+    try{return await serial('action',alias,args);}
+    catch(error){const message=String(error?.message||error);if(/cancelled|canceled|已取消/i.test(message))notice('已取消本次操作。');else notice('操作未能确认：'+message+'。请刷新状态核对结果；页面不会自动重发操作。','bad');return null;}
+    finally{state.actionBusy=false;controls();planPoll();}
+  }
+  async function listModels() {
+    const data=await act('models');if(!data)return;
+    $('modelList').replaceChildren();$('modelsArea').hidden=false;
+    text('modelsHint',data.backend==='host'?'以下为主程序的任务名。具体 embedding 模型须在主程序模型配置中选择。':'这是服务商返回的模型列表，不保证每个模型都支持 embedding。选择合适标识后填入插件原生配置。');
+    const rows=Array.isArray(data.items)?data.items:[];
+    if(!rows.length){const p=document.createElement('p');p.className='empty';p.textContent='没有返回可用项目，请检查模型服务配置。';$('modelList').append(p);return;}
+    for(const item of rows){const name=typeof item==='string'?item:String(item?.id||item?.name||'');if(!name)continue;const row=document.createElement('div');row.className='model-item';const code=document.createElement('code');code.textContent=name;row.append(code);$('modelList').append(row);}
+  }
+  function importBytes() {const bytes=new TextEncoder().encode($('importInput').value).length;text('importSize',bytes.toLocaleString('zh-CN')+' / 48,000 UTF-8 字节 · 每批 1–200 条 · 只追加，重复项跳过');return bytes;}
+  async function importEntries() {
+    errorBox('importError','');const raw=$('importInput').value.replace(/^\uFEFF/,'').trim();
+    try{if(!raw)throw new Error('请先选择文件或粘贴精选表达 JSON。');if(new TextEncoder().encode(raw).length>48000)throw new Error('本批超过 48,000 UTF-8 字节，请拆分后导入。');const items=JSON.parse(raw);if(!Array.isArray(items)||items.length<1||items.length>200)throw new Error('请提供包含 1–200 条精选表达的 JSON 数组。');for(const item of items){if(!item||typeof item!=='object'||typeof item.situation!=='string'||!item.situation.trim()||typeof item.style!=='string'||!item.style.trim()||!Array.isArray(item.content_list)||!item.content_list.length||item.content_list.some(value=>typeof value!=='string'||!value.trim()))throw new Error('每条需要 situation、style 和非空字符串数组 content_list。');}
+      const result=await act('import',{entries_json:raw});if(result){notice('已追加 '+count(result.added)+' 条，跳过重复 '+count(result.skipped)+' 条，当前共 '+count(result.total)+' 条。请更新索引。','good');await refreshStatus();state.offset=0;await loadEntries();}
+    }catch(error){errorBox('importError',error instanceof SyntaxError?'JSON 格式不正确，请检查引号、逗号和数组结构。':String(error?.message||error));}
+  }
+  $('refreshButton').addEventListener('click',async()=>{notice('');await refreshStatus();await loadEntries();});
+  $('configHelpButton').addEventListener('click',()=>{$('configHelp').open=true;$('configHelp').scrollIntoView({block:'nearest',behavior:'smooth'});});
+  $('modelsButton').addEventListener('click',listModels);
+  $('buildButton').addEventListener('click',async()=>{const result=await act('build');if(result){notice(result.message||'索引任务已受理，请查看进度。');await refreshStatus();}});
+  $('previewForm').addEventListener('submit',async event=>{event.preventDefault();const query=$('queryInput').value.trim();if(!query){errorBox('previewError','请输入一段聊天内容。');return;}const result=await act('preview',{query});if(result){notice('预览请求已受理，请查看下方结果。');await refreshStatus();}});
+  $('searchForm').addEventListener('submit',async event=>{event.preventDefault();state.search=$('searchInput').value.trim();state.offset=0;await loadEntries();});
+  $('resetSearchButton').addEventListener('click',async()=>{$('searchInput').value='';state.search='';state.offset=0;await loadEntries();});
+  $('previousButton').addEventListener('click',async()=>{state.offset=Math.max(0,state.offset-state.pageSize);await loadEntries();});
+  $('nextButton').addEventListener('click',async()=>{state.offset+=state.pageSize;await loadEntries();});
+  $('importInput').addEventListener('input',importBytes);$('importButton').addEventListener('click',importEntries);
+  $('importFile').addEventListener('change',async()=>{errorBox('importError','');const file=$('importFile').files?.[0];if(!file)return;try{if(file.size>48000)throw new Error('文件超过 48,000 字节，请拆分精选表达后再导入。');$('importInput').value=(await file.text()).replace(/^\uFEFF/,'');importBytes();}catch(error){errorBox('importError',String(error?.message||error));}});
+  document.addEventListener('visibilitychange',()=>{pausePoll();if(!document.hidden&&state.connected)refreshStatus();});
+  window.addEventListener('pagehide',pausePoll);window.addEventListener('maibot:context',theme);
+  async function init(){theme();if(!window.maibot){text('connectionText','请在 MaiBot 中打开');notice('请从 MaiBot WebUI 的「表达检索」工作区打开本页。独立 HTML 文件不会连接插件，也不会调用模型。');return;}try{await window.maibot.ready;state.connected=true;theme();controls();await refreshStatus();await loadEntries();}catch(error){notice('页面桥连接失败：'+String(error?.message||error),'bad');text('connectionText','连接未完成');}}
+  init();
+})();
+</script>
+</body>
+</html>
