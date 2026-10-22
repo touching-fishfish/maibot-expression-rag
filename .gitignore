@@ -5,6 +5,5 @@ config_back/
 tests/.test_artifacts/
 *.sqlite3*
 .venv/
-/assets/seed_expressions.json
 .env
 .env.*

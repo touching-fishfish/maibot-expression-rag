@@ -1,6 +1,6 @@
 # 精选表达检索 · alan.expression-rag
 
-在 MaiBot 已经决定说话之后，使用当前会话的聊天文本检索相近的表达例子，再让回复模型参考其口吻与回应方法。要求 MaiBot ≥ 1.3.12（当前按 1.3.12 验证）、SDK ≥ 2.12、WebUI 页面协议 2。仓库公开分发，不含任何语料、密钥与本机配置。
+在 MaiBot 已经决定说话之后，使用当前会话的聊天文本检索相近的表达例子，再让回复模型参考其口吻与回应方法。要求 MaiBot ≥ 1.3.12（当前按 1.3.12 验证）、SDK ≥ 2.12、WebUI 页面协议 2。仓库公开分发：随包 68 条脱敏示例语料；不含密钥与本机配置。
 
 ## 安装
 
@@ -11,13 +11,13 @@
 1. **从 Git 仓库克隆（推荐）**：MaiBot WebUI → 插件管理 → 安装插件 → 从仓库克隆，填 `https://github.com/touching-fishfish/maibot-expression-rag`。
 2. **下载 zip 手动解压**：在仓库页 Download ZIP，把解压出的整个文件夹放进 MaiBot 的 `plugins/` 目录（文件夹名不限），重启 MaiBot 加载。
 
-仓库**不携带任何语料**：公开包从空库启动，语料由使用者在 WebUI 工作区自己追加导入；`config.toml`、API 密钥、本机聊天内容与向量数据均不进入仓库。本机开发时若存在 `assets/seed_expressions.json` 才会做一次性初始化，该文件不随仓库分发。
+随包附带 **68 条脱敏示例语料**（`assets/seed_expressions.json`，仅“场合/招式”，无姓名、地名、号码或聊天原文），首次建立索引时自动初始化；之后仍可随时在 WebUI 追加你自己的语料。原始聊天记录、`config.toml`、API 密钥与本机向量数据均不进入仓库。
 
 迁移时备份并复制插件专属数据目录即可，模型配置与密钥在目标机器单独填写；插件不会自动删除任何数据。
 
 ## 数据边界
 
-- 公开仓库不含初始语料；新机器从空库开始。语料只能由使用者在工作区页面明确追加导入，导入内容不会上传。
+- 随包 68 条示例语料已脱敏：只保留场景与表达方式，不含姓名、地点、号码或聊天原文；不需要可整体删除后从空库开始。
 - **不读取、不查询、不导入宿主的封存记忆库**；不申请 memory、person、knowledge 或主数据库能力，也不打开 MaiBot.db / a-memorix。
 - embedding 的索引文本只包含“聊天场景＋表达方式”；参考句保留为检索结果，不把其中的个人经历当作事实。
 - 当前聊天仅通过宿主普通消息接口读取，限定本次回复的真实会话 ID；目标消息优先，上下文长度有上限。查询缓存只在内存保留，不存聊天文本到插件数据库。
@@ -29,7 +29,7 @@
 2. 打开它的标准配置页，选择 embedding 方式并保存。
    - `openai`：填写你选择的兼容服务商 `base_url`、embedding `model` 和 `api_key`。地址保留服务商要求的 `/v1` 或 `/api/v3`，插件不会自动拼接版本号。密钥也可留空用于本机无认证服务。示例：硅基流动 `https://api.siliconflow.cn/v1` + `BAAI/bge-m3`（1024 维，免费额度）或 `Qwen/Qwen3-Embedding-8B`。
    - `host`：复用主程序 `embedding` 任务。请在主程序模型配置中为该任务选择**唯一一个** embedding 模型，插件不替你选择模型。此模式不需要在插件再填密钥。
-3. 打开顶部“表达检索”工作区，点击“建立 / 更新索引”，等待已索引条数与你导入的条数一致（公开包从 0 开始）。加载插件本身不会调用 embedding；只有你建立索引、做预览或索引就绪后的真实回复会调用。
+3. 打开顶部“表达检索”工作区，点击“建立 / 更新索引”，等待已索引 68 条（随包语料）或与你导入的总条数一致。加载插件本身不会调用 embedding；只有你建立索引、做预览或索引就绪后的真实回复会调用。
 4. 在“检索预览”输入一段聊天，观察匹配场景、参考句、真实余弦分数和将注入的提示文本。预览不会生成或发送 QQ 消息。
 5. 实际聊天时，插件在 `maisaka.replyer.before_request` Hook 中加入命中的例子；保留人设、其它插件的附加提示和原回复流程。无合适结果时允许不注入。
 
@@ -76,4 +76,4 @@
 - [LlamaIndex 内容与转换配置的缓存指纹](https://github.com/run-llama/llama_index/blob/main/llama-index-core/llama_index/core/ingestion/pipeline.py)
 - [MaiBot 官方插件开发指南](https://github.com/Mai-with-u/maibot-plugin-sdk/blob/main/docs/guide.md)，实际调用以本机 SDK 2.12 为准。
 
-仓库：<https://github.com/touching-fishfish/maibot-expression-rag>。代码采用 MIT 许可；个人语料不随仓库分发，也不授权公开再分发。
+仓库：<https://github.com/touching-fishfish/maibot-expression-rag>。代码与随包示例语料均按 MIT 许可分发；原始微信聊天记录不随仓库分发，也不授权公开再分发。

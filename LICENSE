@@ -20,5 +20,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-The personal expression corpus in assets/seed_expressions.json is user data
-and is not offered for public redistribution under this software license.
+The bundled expression corpus in assets/seed_expressions.json is anonymized
+sample data (scenes and phrasings only, no names, places or identifiers) and
+is covered by the same MIT terms above.

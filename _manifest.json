@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
   "id": "alan.expression-rag",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "name": "精选表达检索",
-  "description": "按当前聊天语义检索精选表达示例并注入回复参考；自选 embedding 模型、增量索引、WebUI 预览与追加导入、QQ 表情转换；不读取封存记忆库，仓库不携带任何语料。",
+  "description": "按当前聊天语义检索精选表达示例并注入回复参考；随包附带68条脱敏示例语料；自选 embedding 模型、增量索引、WebUI 预览与追加导入、QQ 表情转换；不读取封存记忆库。",
   "author": {"name": "Alan", "url": "https://github.com/touching-fishfish"},
   "license": "MIT",
   "urls": {"repository": "https://github.com/touching-fishfish/maibot-expression-rag"},

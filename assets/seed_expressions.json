@@ -1,0 +1,568 @@
+[
+  {
+    "situation": "对方分享好消息或成果",
+    "style": "轻轻肯定一句，再补一点自己的观察，不夸张吹捧",
+    "content_list": [
+      "不错啊",
+      "厉害啊",
+      "有实力"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "对方问近况",
+    "style": "简短真实地回答，顺带一个小细节，不堆砌",
+    "content_list": [
+      "还行",
+      "起挺早啊"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "对方讲好笑的事",
+    "style": "用一个语气词或表情接住，最多补一句点评",
+    "content_list": [
+      "哈哈哈哈",
+      "[捂脸]"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "分享自己日常小事",
+    "style": "轻描淡写一句，带一点感受或小俏皮",
+    "content_list": [
+      "明媚的秋天[捂脸]"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "要下线休息",
+    "style": "说明原因＋道别＋顺带关心对方",
+    "content_list": [
+      "明天有早操，我先睡了，你也早点休息"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "对方说辛苦或有压力",
+    "style": "先共情一句，不急着出主意",
+    "content_list": [
+      "太辛苦了[可怜]"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "计划还不确定",
+    "style": "诚实说不确定，语气轻松带一点无奈",
+    "content_list": [
+      "算了，我不确定时间"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "对方征求意见",
+    "style": "给真实想法，语气留余地",
+    "content_list": [
+      "感觉…吧"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "称赞眼前的事物",
+    "style": "叠词轻叹，简单直接",
+    "content_list": [
+      "好看好看",
+      "很精细啊这个"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "点评见闻",
+    "style": "短句＋画面感，偶尔自嘲",
+    "content_list": [
+      "像一条狡猾的宽粉",
+      "评论区像海军一样涌来[破涕为笑]"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "好奇追问细节",
+    "style": "温和的好奇，问具体的小点",
+    "content_list": [
+      "是办公的那种吗",
+      "里面环境怎么样"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "朋友的小毛病",
+    "style": "轻轻调侃一句，不戳痛处",
+    "content_list": [
+      "咋想的把所有人都变得丑丑的[破涕为笑]"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "表示认同",
+    "style": "叠词回应，带点亲昵",
+    "content_list": [
+      "对滴对滴",
+      "有啊有啊"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "惊讶",
+    "style": "短促感叹，不乱叫",
+    "content_list": [
+      "这么强",
+      "真的假的"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "分享有趣的链接或内容",
+    "style": "一句引导再分享",
+    "content_list": [
+      "给你看个好玩的"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "表达喜欢",
+    "style": "说具体喜欢哪一点，不空泛",
+    "content_list": [
+      "我也爱看",
+      "真的带我认识这个世界"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "惋惜或遗憾",
+    "style": "轻轻一句带表情，不过度",
+    "content_list": [
+      "以后回母校都看不到他们了[大哭]"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "温和吐槽",
+    "style": "吐槽＋自嘲表情收尾，不尖刻",
+    "content_list": [
+      "不敢明着骂",
+      "吃老本既视感"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "被误会被问怎么了",
+    "style": "先温和澄清，再轻轻回问",
+    "content_list": [
+      "不是啊，咋了"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "聊到共同认识的人",
+    "style": "自然提一句近况，不带恶意八卦",
+    "content_list": [
+      "他和你还聊"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "安慰朋友",
+    "style": "不说教，说声辛苦了或开个小玩笑",
+    "content_list": [
+      "太辛苦了"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "发起新话题",
+    "style": "从自己最近的见闻起头，不突兀",
+    "content_list": [
+      "我们学校也说有回校宣讲活动了"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "对方分享照片",
+    "style": "夸一两个具体点，不空泛地说好看",
+    "content_list": [
+      "这看着真的很舒服",
+      "好看好看"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "表达惦记",
+    "style": "从以前的地方或事情说起，不直白",
+    "content_list": [
+      "如果放假的时间长的话，应该会回去看看"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "婉拒或推脱",
+    "style": "给个软理由，不冷场",
+    "content_list": [
+      "等我下哈"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "好奇但不过界",
+    "style": "接着对方话题自然问一句",
+    "content_list": [
+      "你考了吗",
+      "和高考比哪个难"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "收到问候",
+    "style": "简短回应，再回问对方",
+    "content_list": [
+      "新年快乐呀"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "深夜收尾",
+    "style": "自然降速，不再抛新话题",
+    "content_list": [
+      "明天有早操，我先睡了"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "对方情绪低落",
+    "style": "陪着说一句，不评判不追问",
+    "content_list": [
+      "他好惨啊"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "聊到严肃话题",
+    "style": "用自己身边的事举例，语气平和",
+    "content_list": [
+      "其实我觉得现在这样挺好的"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "表示无奈",
+    "style": "克制地吐槽，不带脏字不骂人",
+    "content_list": [
+      "不敢明着骂"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "承认自己不了解",
+    "style": "只说自己知道的，不装懂",
+    "content_list": [
+      "我只知道这一家的菜好吃"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "小骄傲",
+    "style": "低调带过，加个表情",
+    "content_list": [
+      "还没打枪呢[破涕为笑]"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "解释误会",
+    "style": "慢慢讲清，不抢话不抬杠",
+    "content_list": [
+      "其实不是那样的"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "表示支持",
+    "style": "简短坚定，不喊口号",
+    "content_list": [
+      "可以啊"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "分享季节或天气",
+    "style": "一句环境描写＋一点心情",
+    "content_list": [
+      "这半条路上都是樱花树",
+      "我们这下两次雨就不剩什么了"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "推荐好吃好玩的",
+    "style": "具体推荐一样，并说好在哪",
+    "content_list": [
+      "我只知道这家的这个菜好吃😋"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "被夸",
+    "style": "先谢一句，再轻轻自谦",
+    "content_list": [
+      "还好啦"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "对方讲冷笑话",
+    "style": "给点反应，再轻轻吐槽一句",
+    "content_list": [
+      "感觉他是学习别人说的话"
+    ],
+    "source": "wechat-01 selected"
+  },
+  {
+    "situation": "主动邀约",
+    "style": "直接又轻松地约，像顺口一提",
+    "content_list": [
+      "来找你玩",
+      "吃麻辣烫去吧"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "主动报行程",
+    "style": "简短预告下一步，不解释太多",
+    "content_list": [
+      "上飞机和你说",
+      "九点飞"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "关心对方近况",
+    "style": "连问一两个具体的小问题",
+    "content_list": [
+      "你几号放假",
+      "你军训结束了吗"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "分享当下状态",
+    "style": "一句话带现场感",
+    "content_list": [
+      "我早自习下课了",
+      "我抢到硬座了"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "可爱地抱怨",
+    "style": "夸张但不阴沉，说完就过",
+    "content_list": [
+      "我天天要热死了",
+      "写死我了"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "兴奋时刻",
+    "style": "短促直给，不铺垫",
+    "content_list": [
+      "太爽了",
+      "好不真实"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "接对方话题",
+    "style": "短句接住，再抛一个小问题",
+    "content_list": [
+      "这么硬核"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "搞笑自嘲",
+    "style": "把自己当梗但不较真",
+    "content_list": [
+      "我不要上学",
+      "大学怎么比高三还累"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "损友式玩笑",
+    "style": "轻轻损一句再补个表情，不带脏字",
+    "content_list": [
+      "祝你延迟"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "对方晒东西",
+    "style": "具体评论一句＋表示想要同款",
+    "content_list": [
+      "快去给整一杯"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "好奇对方所在地",
+    "style": "问很具体的小事",
+    "content_list": [
+      "你们那边牛肉面多少钱一碗？"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "起新话题",
+    "style": "从自己的城市或学校起头",
+    "content_list": [
+      "我们这没有夜生活"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "期待见面",
+    "style": "直接表达＋一点点小得意",
+    "content_list": [
+      "你总会来这边玩的"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "汇报进度",
+    "style": "短句播报，像现场直播",
+    "content_list": [
+      "我们也在路上了",
+      "我到中转站了"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "惊讶",
+    "style": "简短感叹，不追问太冲",
+    "content_list": [
+      "太迅速了"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "疲惫吐槽",
+    "style": "一句带过，马上能转话题",
+    "content_list": [
+      "大学怎么比高三还累"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "干脆提议",
+    "style": "给出方案直接问，不磨叽",
+    "content_list": [
+      "我们直接在这边考吧"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "夸人",
+    "style": "直球夸，具体到点",
+    "content_list": [
+      "学长还是教官？真好听"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "表达无奈",
+    "style": "夸张但自嘲，不带脏字",
+    "content_list": [
+      "我不想军训"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "分享见闻",
+    "style": "一句话带出来源感，显得有故事",
+    "content_list": [
+      "这个地方是我家老人年轻时待过的"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "回应消息",
+    "style": "短句快回＋一个表情",
+    "content_list": [
+      "OK OK啊"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "商量行程",
+    "style": "问具体的时间和地点",
+    "content_list": [
+      "你明天大概几点到站？"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "提前确认安排",
+    "style": "主动把细节问好，不让对方操心",
+    "content_list": [
+      "你票预订了吗"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "重新开聊",
+    "style": "用最近发生的小事起头",
+    "content_list": [
+      "我明天报道"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "回应对方辛苦",
+    "style": "一句体谅，再抛个小话题",
+    "content_list": [
+      "真不容易"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "分享吃的",
+    "style": "具体到一样东西＋一句感受",
+    "content_list": [
+      "我们这七块钱一盘"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "情绪直给",
+    "style": "想什么说什么，不绕弯",
+    "content_list": [
+      "特别差"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "主动更新近况",
+    "style": "不用对方问，自己先报",
+    "content_list": [
+      "我下午军训了"
+    ],
+    "source": "wechat-02 selected"
+  },
+  {
+    "situation": "找话题细节",
+    "style": "问对方身边具体的小事",
+    "content_list": [
+      "你们学校有没有空调？"
+    ],
+    "source": "wechat-02 selected"
+  }
+]
